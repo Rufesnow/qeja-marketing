@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-granite-50 text-granite-700 font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Compass yellow CTA button */
+  .btn-compass {
+    @apply bg-compass text-granite-900 font-semibold px-6 py-3 rounded-lg
+           transition-all duration-200 hover:bg-compass-dark
+           focus:outline-none focus:ring-2 focus:ring-compass focus:ring-offset-2
+           active:scale-[0.98];
+  }
+
+  /* Outline button */
+  .btn-outline {
+    @apply border-2 border-granite-300 text-granite-700 font-semibold px-6 py-3 rounded-lg
+           transition-all duration-200 hover:border-granite-500 hover:text-granite-900
+           focus:outline-none focus:ring-2 focus:ring-granite-400 focus:ring-offset-2
+           active:scale-[0.98];
+  }
+
+  /* Dark button */
+  .btn-dark {
+    @apply bg-granite-800 text-granite-50 font-semibold px-6 py-3 rounded-lg
+           transition-all duration-200 hover:bg-granite-900
+           focus:outline-none focus:ring-2 focus:ring-granite-600 focus:ring-offset-2
+           active:scale-[0.98];
+  }
+}
