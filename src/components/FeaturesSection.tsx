@@ -77,7 +77,7 @@ export default function FeaturesSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="features" className="py-20 sm:py-28 bg-granite-50">
+    <section id="features" className="hidden sm:block py-20 sm:py-28 bg-granite-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

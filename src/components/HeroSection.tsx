@@ -22,7 +22,7 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-granite-50">
+    <section className="relative min-h-[85vh] sm:min-h-screen flex items-center overflow-hidden bg-granite-50">
       {/* Background — hero image or SVG skyline fallback */}
       {backgroundImage ? (
         <>
@@ -155,7 +155,7 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

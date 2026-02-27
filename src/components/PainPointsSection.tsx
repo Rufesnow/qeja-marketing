@@ -80,11 +80,11 @@ export default function PainPointsSection() {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 lg:grid-cols-2 gap-6"
         >
-          {painPoints.map((item) => (
+          {painPoints.map((item, index) => (
             <motion.div
               key={item.pain}
               variants={itemVariants}
-              className="bg-granite-700/30 border border-granite-600/30 rounded-2xl p-6 sm:p-8 group hover:border-forest-500/30 transition-all duration-300"
+              className={`bg-granite-700/30 border border-granite-600/30 rounded-2xl p-6 sm:p-8 group hover:border-forest-500/30 transition-all duration-300 ${index >= 2 ? 'hidden sm:block' : ''}`}
             >
               {/* Pain */}
               <div className="flex items-start gap-3 mb-4">
