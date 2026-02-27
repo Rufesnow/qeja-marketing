@@ -11,9 +11,9 @@ import {
 
 const painPoints = [
   {
-    pain: 'Fake M-Pesa payment screenshots',
-    detail: 'Tenants send doctored screenshots as proof of payment. You only realise the money never arrived when you check your statement at month-end.',
-    solution: 'Every M-Pesa payment is automatically verified against your actual account — no screenshots, no guesswork.',
+    pain: 'Problem tenants that keep coming back',
+    detail: 'A tenant skips on rent at one property, then shows up at another with a clean slate. There is no easy way to check their history.',
+    solution: 'Built-in identity checks and tenant screening — flag risky applicants before they ever sign a lease.',
   },
   {
     pain: 'Spreadsheets that fall apart',
@@ -21,9 +21,9 @@ const painPoints = [
     solution: 'A live dashboard that tracks every payment, generates invoices automatically, and gives you audit-ready reports in one click.',
   },
   {
-    pain: 'Problem tenants that keep coming back',
-    detail: 'A tenant skips on rent at one property, then shows up at another with a clean slate. There is no easy way to check their history.',
-    solution: 'Built-in identity checks and tenant screening — flag risky applicants before they ever sign a lease.',
+    pain: 'Fake M-Pesa payment screenshots',
+    detail: 'Tenants send doctored screenshots as proof of payment. You only realise the money never arrived when you check your statement at month-end.',
+    solution: 'Every M-Pesa payment is automatically verified against your actual account — no screenshots, no guesswork.',
   },
   {
     pain: 'Staying on the right side of the law',
