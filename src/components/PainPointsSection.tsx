@@ -16,9 +16,9 @@ const painPoints = [
     solution: 'Built-in identity checks and tenant screening — flag risky applicants before they ever sign a lease.',
   },
   {
-    pain: 'Spreadsheets that fall apart',
-    detail: 'Your rent tracker lives in a shared Excel file. Formulas break, someone overwrites a row, and pulling a simple report takes half a day.',
-    solution: 'A live dashboard that tracks every payment, generates invoices automatically, and gives you audit-ready reports in one click.',
+    pain: 'Staying on the right side of the law',
+    detail: 'Data protection rules, VAT filings, withholding tax — miss one deadline and the penalties add up fast.',
+    solution: 'Compliance is handled for you: digital consent forms, automatic tax calculations, and a full audit trail for every transaction.',
   },
   {
     pain: 'Fake M-Pesa payment screenshots',
@@ -26,9 +26,9 @@ const painPoints = [
     solution: 'Every M-Pesa payment is automatically verified against your actual account — no screenshots, no guesswork.',
   },
   {
-    pain: 'Staying on the right side of the law',
-    detail: 'Data protection rules, VAT filings, withholding tax — miss one deadline and the penalties add up fast.',
-    solution: 'Compliance is handled for you: digital consent forms, automatic tax calculations, and a full audit trail for every transaction.',
+    pain: 'Spreadsheets that fall apart',
+    detail: 'Your rent tracker lives in a shared Excel file. Formulas break, someone overwrites a row, and pulling a simple report takes half a day.',
+    solution: 'A live dashboard that tracks every payment, generates invoices automatically, and gives you audit-ready reports in one click.',
   },
 ]
 
