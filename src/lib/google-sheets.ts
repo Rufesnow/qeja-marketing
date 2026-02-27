@@ -10,19 +10,29 @@ interface LeadData {
 
 export async function appendLeadToSheet(data: LeadData): Promise<void> {
   const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID
-  const serviceAccountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL
-  const privateKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY
 
-  if (!spreadsheetId || !serviceAccountEmail || !privateKey) {
+  if (!spreadsheetId) {
     throw new Error('Google Sheets credentials not configured')
   }
 
-  const auth = new google.auth.JWT(
-    serviceAccountEmail,
-    undefined,
-    privateKey.replace(/\\n/g, '\n'),
-    ['https://www.googleapis.com/auth/spreadsheets']
-  )
+  // Use JWT auth if private key is provided, otherwise use Application Default Credentials
+  // (ADC works automatically on Cloud Run via the service account assigned to the service)
+  const serviceAccountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL
+  const privateKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY
+
+  let auth
+  if (serviceAccountEmail && privateKey) {
+    auth = new google.auth.JWT(
+      serviceAccountEmail,
+      undefined,
+      privateKey.replace(/\\n/g, '\n'),
+      ['https://www.googleapis.com/auth/spreadsheets']
+    )
+  } else {
+    auth = new google.auth.GoogleAuth({
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    })
+  }
 
   const sheets = google.sheets({ version: 'v4', auth })
 
