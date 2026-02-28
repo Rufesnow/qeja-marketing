@@ -13,9 +13,9 @@ const footerLinks = {
     { label: 'Contact', href: '#signup' },
   ],
   legal: [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Data Protection', href: '#' },
+    { label: 'Privacy Policy', href: '/docs/Qeja-Privacy-Policy.pdf', download: true },
+    { label: 'Terms of Service', href: '/docs/Qeja-Terms-of-Service.pdf', download: true },
+    { label: 'Data Protection', href: '/docs/Qeja-Data-Protection-Policy.pdf', download: true },
   ],
 }
 
@@ -91,12 +91,13 @@ export default function FooterSection() {
             <ul className="space-y-2.5">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <button
-                    onClick={() => scrollTo(link.href)}
+                  <a
+                    href={link.href}
+                    download
                     className="text-granite-400 hover:text-granite-200 text-sm transition-colors"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
