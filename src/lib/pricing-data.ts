@@ -26,9 +26,9 @@ export const pricingPlans: PricingPlan[] = [
     features: [
       'Basic property management',
       'Tenant profiles & documents',
-      'Simple financial tracking',
-      'Email notifications',
-      'Basic reporting',
+      'Analytics & Business Intelligence',
+      'Multi-channel communications',
+      'Digital contracts & e-signatures',
       'Community support',
     ],
     limits: {
@@ -49,11 +49,10 @@ export const pricingPlans: PricingPlan[] = [
     features: [
       'Everything in Starter, plus:',
       'M-Pesa payment verification',
+      'Full AI Insights dashboard',
       'AI payment default prediction',
       'AI vacancy forecasting',
       'Qeja Tenant Network access',
-      'Digital contracts & e-signatures',
-      'Multi-channel communications',
       'Priority support',
     ],
     limits: {
@@ -73,7 +72,7 @@ export const pricingPlans: PricingPlan[] = [
     features: [
       'Everything in Professional, plus:',
       'AI revenue forecasting & anomaly detection',
-      'Full AI Insights dashboard',
+      'Tenant risk scoring for applicants',
       'Custom integrations & API access',
       'Dedicated account manager',
       'SLA & uptime guarantees',

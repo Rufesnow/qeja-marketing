@@ -60,7 +60,7 @@ export default function PainPointsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium rounded-full mb-6">
+          <span className="inline-block px-4 py-1.5 bg-white border border-granite-600/30 text-granite-700 text-sm font-medium rounded-full mb-6">
             Why most property managers fly blind
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-granite-50 mb-4">

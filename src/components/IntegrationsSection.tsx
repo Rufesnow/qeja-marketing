@@ -96,7 +96,7 @@ export default function IntegrationsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 bg-rivian-blue/5 border border-rivian-blue/20 text-rivian-blue text-sm font-medium rounded-full mb-6">
+          <span className="inline-block px-4 py-1.5 bg-granite-900 border border-granite-900 text-white text-sm font-medium rounded-full mb-6">
             Integrations
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-granite-900 mb-4">

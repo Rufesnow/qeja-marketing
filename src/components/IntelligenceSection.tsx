@@ -104,10 +104,10 @@ export default function IntelligenceSection() {
               <motion.div
                 key={tier.title}
                 variants={itemVariants}
-                className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 ${
+                className={`relative rounded-2xl p-6 sm:p-8 transition-all duration-300 ${
                   tier.accent
-                    ? 'bg-granite-800/80 border-compass/30 ring-1 ring-compass/10'
-                    : 'bg-granite-800/40 border-granite-700/40'
+                    ? 'bg-granite-800/80 border-[3px] border-compass/40 ring-1 ring-compass/10'
+                    : 'bg-granite-800/40 border-[3px] border-granite-700/50'
                 }`}
               >
                 {tier.badge && (

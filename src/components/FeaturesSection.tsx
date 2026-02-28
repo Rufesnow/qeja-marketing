@@ -87,7 +87,7 @@ export default function FeaturesSection() {
           className="text-center mb-16"
           ref={ref}
         >
-          <span className="inline-block px-4 py-1.5 bg-forest-500/5 border border-forest-500/20 text-forest-500 text-sm font-medium rounded-full mb-6">
+          <span className="inline-block px-4 py-1.5 bg-compass border border-compass text-granite-900 text-sm font-medium rounded-full mb-6">
             The Foundation
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-granite-900 mb-4">
@@ -113,7 +113,7 @@ export default function FeaturesSection() {
               <motion.div
                 key={feature.title}
                 variants={itemVariants}
-                className="group relative bg-white border border-granite-200 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-granite-200/50 hover:border-granite-300"
+                className="group relative bg-white border border-granite-200 rounded-2xl p-6 sm:p-8 shadow-sm shadow-granite-200/60 transition-all duration-300 hover:shadow-lg hover:shadow-granite-200/50 hover:border-granite-300"
               >
                 {/* Icon */}
                 <div className="w-12 h-12 rounded-xl bg-forest-500/10 flex items-center justify-center mb-5 group-hover:bg-forest-500/20 transition-colors">

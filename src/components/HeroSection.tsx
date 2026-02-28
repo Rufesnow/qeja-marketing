@@ -147,6 +147,10 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
               <ShieldCheck className="w-3.5 h-3.5" />
               Kenya DPA Compliant
             </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-forest-500/10 border border-forest-500/20 rounded-full text-forest-600 text-xs font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              GDPR Compliant
+            </span>
           </motion.div>
         </div>
       </div>

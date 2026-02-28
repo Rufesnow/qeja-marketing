@@ -34,7 +34,7 @@ export default function PricingSection() {
           <span className="inline-block px-4 py-1.5 bg-compass/5 border border-compass/20 text-compass-dark text-sm font-medium rounded-full mb-6">
             Pricing
           </span>
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-granite-900 mb-4">
+          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-granite-900 mb-4 drop-shadow-sm">
             Simple, transparent pricing
           </h2>
           <p className="text-granite-500 text-lg max-w-2xl mx-auto mb-8">
@@ -112,13 +112,6 @@ export default function PricingSection() {
                 {plan.monthlyPrice !== null && plan.monthlyPrice > 0 && (
                   <span className="text-granite-400 text-sm ml-1">/month</span>
                 )}
-              </div>
-
-              {/* Limits */}
-              <div className="flex gap-4 mb-6 text-sm text-granite-600">
-                <span>{plan.limits.users}</span>
-                <span className="text-granite-300">|</span>
-                <span>{plan.limits.properties}</span>
               </div>
 
               {/* CTA */}
