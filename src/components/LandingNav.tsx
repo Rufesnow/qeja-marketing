@@ -6,9 +6,9 @@ import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
+  { label: 'Intelligence', href: '#intelligence' },
   { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
-  { label: 'Integrations', href: '#integrations' },
 ]
 
 export default function LandingNav() {

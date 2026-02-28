@@ -97,14 +97,14 @@ export default function IntegrationsSection() {
           className="text-center mb-14"
         >
           <span className="inline-block px-4 py-1.5 bg-rivian-blue/5 border border-rivian-blue/20 text-rivian-blue text-sm font-medium rounded-full mb-6">
-            Integrations & Capabilities
+            Integrations
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-granite-900 mb-4">
-            Built for how East Africa works
+            Plugs into what you already use
           </h2>
           <p className="text-granite-500 text-lg max-w-2xl mx-auto">
-            Deep integrations with the payment systems, banks, and communication
-            channels your tenants already use — not generic tools from Silicon Valley.
+            M-Pesa, major banks, WhatsApp, SMS — the infrastructure your business
+            already runs on. Qeja connects to all of it natively.
           </p>
         </motion.div>
 

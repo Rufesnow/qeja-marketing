@@ -3,6 +3,7 @@ import LandingNav from '@/components/LandingNav'
 import HeroSection from '@/components/HeroSection'
 import PainPointsSection from '@/components/PainPointsSection'
 import StatsSection from '@/components/StatsSection'
+import IntelligenceSection from '@/components/IntelligenceSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import IntegrationsSection from '@/components/IntegrationsSection'
 import PricingSection from '@/components/PricingSection'
@@ -13,22 +14,22 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Qeja | Property Management Platform for East Africa</title>
+        <title>Qeja | AI-Powered Property Intelligence for East Africa</title>
         <meta
           name="description"
-          content="All-in-one property management platform built for East African property managers. Manage properties, tenants, payments, and compliance with M-Pesa integration."
+          content="The only property management platform in East Africa with predictive AI and a cross-property tenant network. Know which tenants will pay late, which leases won't renew, and which applicants to avoid — before it costs you."
         />
         <meta
           name="keywords"
-          content="property management, Kenya, East Africa, M-Pesa, tenant management, real estate, Nairobi, property manager software, Qeja"
+          content="property management AI, Kenya property intelligence, tenant risk scoring, vacancy prediction, East Africa real estate software, tenant background check Kenya, Qeja"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Qeja — Stop Losing Money to Broken Systems" />
+        <meta property="og:title" content="Qeja — Property Intelligence That Sees What's Coming" />
         <meta
           property="og:description"
-          content="The all-in-one platform for managing properties, tenants, payments, and compliance across East Africa."
+          content="Predictive AI that flags late payers before they're late. A tenant network that exposes problem renters before you sign them. Built for East African property managers."
         />
         <meta property="og:image" content="https://www.qe-ja.com/images/og-image.jpg" />
         <meta property="og:url" content="https://www.qe-ja.com" />
@@ -37,10 +38,10 @@ export default function Home() {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Qeja — Stop Losing Money to Broken Systems" />
+        <meta name="twitter:title" content="Qeja — Property Intelligence That Sees What's Coming" />
         <meta
           name="twitter:description"
-          content="All-in-one platform for East African property managers."
+          content="AI-powered property management with predictive analytics and cross-property tenant screening. Built for East Africa."
         />
         <meta name="twitter:image" content="https://www.qe-ja.com/images/og-image.jpg" />
 
@@ -56,7 +57,7 @@ export default function Home() {
               '@type': 'SoftwareApplication',
               name: 'Qeja',
               description:
-                'Property management platform for East African property managers',
+                'AI-powered property intelligence platform for East African property managers with predictive analytics and cross-property tenant network',
               applicationCategory: 'BusinessApplication',
               operatingSystem: 'Web',
               offers: {
@@ -79,6 +80,7 @@ export default function Home() {
         <HeroSection />
         <StatsSection />
         <PainPointsSection />
+        <IntelligenceSection />
         <FeaturesSection />
         <IntegrationsSection />
         <PricingSection />

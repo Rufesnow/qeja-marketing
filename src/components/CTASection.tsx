@@ -30,14 +30,14 @@ export default function CTASection() {
               Early Access
             </span>
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-granite-50 mb-4 leading-tight">
-              Every month you wait,
+              The next problem tenant is
               <br />
-              <span className="text-compass">you lose money.</span>
+              <span className="text-compass">already filling out an application.</span>
             </h2>
             <p className="text-granite-400 text-lg mb-8 leading-relaxed">
-              Fake M-Pesa screenshots, hours wasted on Excel, tenants who vanish —
-              it doesn&apos;t have to be this way. Join property managers across
-              East Africa who are taking control.
+              Without the Qeja Tenant Network, you have no way to know. Without
+              AI Insights, you won&apos;t see the default coming until rent day
+              passes. Property managers across East Africa are already signing up.
             </p>
 
             {/* Trust badges */}

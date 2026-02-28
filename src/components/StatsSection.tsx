@@ -57,29 +57,29 @@ function StatItem({ value, suffix, prefix = '', label, detail, delay }: StatItem
 
 const stats = [
   {
+    value: 85,
+    suffix: '%',
+    label: 'Vacancy Prediction Accuracy',
+    detail: 'Identifies non-renewals 60 days in advance',
+  },
+  {
     value: 200,
     suffix: 'K+',
     prefix: 'KES ',
-    label: 'Average Monthly Loss',
-    detail: 'From M-Pesa fraud alone per property manager',
+    label: 'Saved Per Bad Tenant Avoided',
+    detail: 'Average loss prevented by the Tenant Network',
   },
   {
-    value: 72,
-    suffix: '%',
-    label: 'Time Saved',
-    detail: 'On rent collection and reconciliation',
+    value: 60,
+    suffix: ' Days',
+    label: 'Early Warning Window',
+    detail: 'How far ahead AI flags payment risks',
   },
   {
-    value: 6,
-    suffix: '+',
-    label: 'Banks Integrated',
-    detail: 'KCB, Equity, NCBA, Co-op, ABSA, Stanbic',
-  },
-  {
-    value: 98,
-    suffix: '%',
-    label: 'Platform Uptime',
-    detail: 'Hosted on Google Cloud infrastructure',
+    value: 24,
+    suffix: '',
+    label: 'Invoices Auto-Generated',
+    detail: 'From a single 2-year lease — zero manual entry',
   },
 ]
 

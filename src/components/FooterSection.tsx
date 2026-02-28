@@ -4,9 +4,9 @@ import Image from 'next/image'
 
 const footerLinks = {
   product: [
+    { label: 'AI Intelligence', href: '#intelligence' },
     { label: 'Features', href: '#features' },
     { label: 'Pricing', href: '#pricing' },
-    { label: 'Integrations', href: '#integrations' },
   ],
   company: [
     { label: 'About', href: '#' },
@@ -43,7 +43,7 @@ export default function FooterSection() {
               <span className="font-display font-bold text-lg text-granite-50">Qeja</span>
             </div>
             <p className="text-granite-400 text-sm leading-relaxed mb-4">
-              Property management platform built for how East Africa actually works.
+              AI-powered property intelligence built in Nairobi for East African property managers.
             </p>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2 h-2 bg-forest-500 rounded-full" />

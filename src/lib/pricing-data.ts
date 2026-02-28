@@ -48,12 +48,13 @@ export const pricingPlans: PricingPlan[] = [
     badge: 'Most Popular',
     features: [
       'Everything in Starter, plus:',
-      'M-Pesa payment integration',
-      'AI-powered analytics',
+      'M-Pesa payment verification',
+      'AI payment default prediction',
+      'AI vacancy forecasting',
+      'Qeja Tenant Network access',
       'Digital contracts & e-signatures',
       'Multi-channel communications',
-      'Custom reports & exports',
-      'Priority email & chat support',
+      'Priority support',
     ],
     limits: {
       users: 'Up to 25 users',
@@ -71,12 +72,12 @@ export const pricingPlans: PricingPlan[] = [
     highlighted: false,
     features: [
       'Everything in Professional, plus:',
-      'Unlimited properties & users',
-      'Custom integrations',
+      'AI revenue forecasting & anomaly detection',
+      'Full AI Insights dashboard',
+      'Custom integrations & API access',
       'Dedicated account manager',
       'SLA & uptime guarantees',
       'On-premise deployment option',
-      'Custom workflow automation',
     ],
     limits: {
       users: 'Unlimited users',

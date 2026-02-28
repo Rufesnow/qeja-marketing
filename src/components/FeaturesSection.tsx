@@ -7,7 +7,7 @@ import {
   Wallet,
   MessageSquare,
   FileSignature,
-  BrainCircuit,
+  UserSearch,
   Shield,
 } from 'lucide-react'
 
@@ -23,8 +23,8 @@ const features = [
     icon: Wallet,
     title: 'Payment Reconciliation',
     description:
-      'Every M-Pesa payment verified automatically against your actual account. Direct bank transfers with major commercial banks, automated invoicing, and built-in tax calculations — no more chasing screenshots.',
-    highlight: 'Real-time M-Pesa verification',
+      'M-Pesa verification with mandatory transaction codes, direct bank transfers with KCB, Equity, NCBA, Co-op, ABSA and Stanbic, automated invoicing, and built-in tax calculations. The financial plumbing just works.',
+    highlight: 'M-Pesa + 6 banks',
   },
   {
     icon: MessageSquare,
@@ -35,24 +35,24 @@ const features = [
   },
   {
     icon: FileSignature,
-    title: 'Digital Leases & Contracts',
+    title: 'Digital Leases & Auto-Invoicing',
     description:
-      'Generate contracts from templates, collect legally binding e-signatures, and set auto-renewal rules. Every document stored, searchable, and audit-ready.',
-    highlight: 'E-signatures built in',
+      'Generate contracts from templates, collect e-signatures, and set auto-renewal rules. When a lease is signed, every invoice for the entire lease term is created automatically. A 2-year lease at KES 45,000/month generates 24 invoices on day one.',
+    highlight: 'Zero manual invoicing',
   },
   {
-    icon: BrainCircuit,
-    title: 'AI-Powered Insights',
+    icon: UserSearch,
+    title: 'Tenant Onboarding & Screening',
     description:
-      'Dynamic pricing recommendations based on market data, occupancy forecasting, revenue optimization, and tenant risk scoring — powered by machine learning trained on East African markets.',
-    highlight: 'Pricing & forecasting',
+      'Digital application forms, identity verification under Kenyan Data Protection Act, background checks with consent management, and document collection — all before a tenant signs anything.',
+    highlight: 'Compliant screening',
   },
   {
     icon: Shield,
-    title: 'Background Checks & Compliance',
+    title: 'Compliance & Audit Trail',
     description:
-      'Verify tenant identity before they sign. Digital consent collection under Kenyan Data Protection Act, full audit trails, and automated compliance reporting.',
-    highlight: 'Tenant verification',
+      'Kenyan Data Protection Act consent forms via DocuSeal, VAT and withholding tax calculations, and a complete audit trail for every transaction. When KRA comes knocking, you\'re ready.',
+    highlight: 'KRA-ready',
   },
 ]
 
@@ -88,15 +88,15 @@ export default function FeaturesSection() {
           ref={ref}
         >
           <span className="inline-block px-4 py-1.5 bg-forest-500/5 border border-forest-500/20 text-forest-500 text-sm font-medium rounded-full mb-6">
-            Capabilities
+            The Foundation
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-granite-900 mb-4">
-            One platform. Zero workarounds.
+            Everything else you need. Already built in.
           </h2>
           <p className="text-granite-500 text-lg max-w-2xl mx-auto">
-            Every tool you need to manage properties professionally — from
-            tenant onboarding to financial reporting. No more stitching together
-            spreadsheets and WhatsApp groups.
+            M-Pesa reconciliation, digital contracts, multi-channel communications,
+            compliance — the operational essentials other platforms sell as their
+            headline. For Qeja, they&apos;re just the starting point.
           </p>
         </motion.div>
 

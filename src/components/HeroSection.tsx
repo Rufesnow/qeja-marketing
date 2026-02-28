@@ -16,8 +16,8 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const scrollToFeatures = () => {
-    const el = document.querySelector('#features')
+  const scrollToIntelligence = () => {
+    const el = document.querySelector('#intelligence')
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -59,7 +59,7 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-granite-900/5 border border-granite-200 text-granite-600 text-sm font-medium rounded-full mb-8">
               <span className="w-2 h-2 bg-forest-500 rounded-full animate-pulse" />
-              Built for East African Property Managers
+              The Only AI-Powered Property Platform in East Africa
             </span>
           </motion.div>
 
@@ -70,11 +70,11 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl text-granite-900 leading-[1.08] mb-6 tracking-tight"
           >
-            Stop losing money
+            Know what&apos;s coming
             <br />
-            to{' '}
+            before it{' '}
             <span className="relative inline-block">
-              <span className="relative z-10">broken systems.</span>
+              <span className="relative z-10">costs you.</span>
               <motion.span
                 className="absolute bottom-1 left-0 right-0 h-3 bg-compass/30 -z-0"
                 initial={{ scaleX: 0 }}
@@ -92,9 +92,10 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg sm:text-xl text-granite-500 mb-10 leading-relaxed max-w-2xl"
           >
-            Fake M-Pesa screenshots. Spreadsheets that fall apart. Tenants who disappear
-            owing months of rent. Qeja replaces all of that with one platform built
-            for how East Africa actually works.
+            Qeja&apos;s AI predicts which tenants will default, which leases won&apos;t
+            renew, and which expenses are abnormal — 60 days before you&apos;d notice.
+            Plus a cross-property tenant network that exposes problem renters other
+            landlords already learned about the hard way.
           </motion.p>
 
           {/* CTAs */}
@@ -108,10 +109,10 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
               Get Early Access
             </button>
             <button
-              onClick={scrollToFeatures}
+              onClick={scrollToIntelligence}
               className="btn-outline text-base px-8 py-4"
             >
-              See What It Does
+              See the AI in Action
             </button>
           </motion.div>
 
@@ -144,7 +145,7 @@ export default function HeroSection({ backgroundImage }: HeroSectionProps) {
             <span className="hidden sm:block w-px h-5 bg-granite-300" />
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-forest-500/10 border border-forest-500/20 rounded-full text-forest-600 text-xs font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" />
-              GDPR Compliant
+              Kenya DPA Compliant
             </span>
           </motion.div>
         </div>

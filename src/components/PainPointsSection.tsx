@@ -11,24 +11,24 @@ import {
 
 const painPoints = [
   {
-    pain: 'Problem tenants that keep coming back',
-    detail: 'A tenant skips on rent at one property, then shows up at another with a clean slate. There is no easy way to check their history.',
-    solution: 'Built-in identity checks and tenant screening — flag risky applicants before they ever sign a lease.',
+    pain: 'Accountants marking payments that never arrived',
+    detail: 'Without M-Pesa transaction code verification, anyone can claim a payment was received. You only discover the gap during reconciliation — if you reconcile at all.',
+    solution: 'Qeja requires the actual M-Pesa transaction code before a payment can be recorded. No code, no entry. Fraud becomes structurally impossible, not just unlikely.',
   },
   {
-    pain: 'Staying on the right side of the law',
-    detail: 'Data protection rules, VAT filings, withholding tax — miss one deadline and the penalties add up fast.',
-    solution: 'Compliance is handled for you: digital consent forms, automatic tax calculations, and a full audit trail for every transaction.',
+    pain: 'Signing a tenant other landlords already regret',
+    detail: 'A prospective tenant shows perfect references and a clean history. What you don\'t know: they were evicted from two other properties last year and owe months of unpaid rent.',
+    solution: 'The Qeja Tenant Network shares verified records across all Qeja-managed properties. Evictions, non-payment, and property damage follow a tenant — so you see their real history before signing.',
   },
   {
-    pain: 'Fake M-Pesa payment screenshots',
-    detail: 'Tenants send doctored screenshots as proof of payment. You only realise the money never arrived when you check your statement at month-end.',
-    solution: 'Every M-Pesa payment is automatically verified against your actual account — no screenshots, no guesswork.',
+    pain: 'Finding out a tenant won\'t renew — after they\'ve already left',
+    detail: 'A unit sits empty for two months because you had no warning. You scramble to find a replacement while rent revenue disappears.',
+    solution: 'Qeja\'s AI analyzes payment patterns, complaint history, and engagement signals to predict non-renewals with 85% accuracy — 60 days before the lease expires. Enough time to act.',
   },
   {
-    pain: 'Spreadsheets that fall apart',
-    detail: 'Your rent tracker lives in a shared Excel file. Formulas break, someone overwrites a row, and pulling a simple report takes half a day.',
-    solution: 'A live dashboard that tracks every payment, generates invoices automatically, and gives you audit-ready reports in one click.',
+    pain: 'Manually creating rent invoices every single month',
+    detail: 'You manage 50 units. Every month, that\'s 50 invoices to create, send, and track. One missed invoice means one missed payment you might not notice.',
+    solution: 'Sign a 2-year lease at KES 45,000/month and Qeja generates all 24 invoices automatically. Every tenant, every unit, every month — handled.',
   },
 ]
 
@@ -61,15 +61,15 @@ export default function PainPointsSection() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium rounded-full mb-6">
-            Sound familiar?
+            Why most property managers fly blind
           </span>
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-granite-50 mb-4">
-            Property management in East Africa is{' '}
-            <span className="text-red-400">broken</span>
+            Your competitors see problems.{' '}
+            <span className="text-red-400">You&apos;ll see them coming.</span>
           </h2>
           <p className="text-granite-400 text-lg max-w-2xl mx-auto">
-            Every property manager knows these problems. Most accept them as normal.
-            They don&apos;t have to be.
+            Other platforms help you react after problems happen.
+            Qeja helps you prevent them.
           </p>
         </motion.div>
 
@@ -131,7 +131,7 @@ export default function PainPointsSection() {
           className="text-center mt-12"
         >
           <p className="text-granite-400 text-lg mb-6">
-            Every month you wait costs you money.
+            The next bad tenant is already applying somewhere.
           </p>
           <button
             onClick={() => {
@@ -140,7 +140,7 @@ export default function PainPointsSection() {
             }}
             className="btn-compass text-base px-8 py-3.5"
           >
-            Fix It Now — Get Early Access
+            Protect Your Portfolio — Get Early Access
           </button>
         </motion.div>
       </div>
