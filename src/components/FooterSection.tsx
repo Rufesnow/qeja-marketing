@@ -10,12 +10,12 @@ const footerLinks = {
   ],
   company: [
     { label: 'About', href: '#' },
-    { label: 'Contact', href: '#signup' },
+    { label: 'Contact', href: 'mailto:support@qe-ja.com' },
   ],
   legal: [
-    { label: 'Privacy Policy', href: '/docs/Qeja-Privacy-Policy.pdf', download: true },
-    { label: 'Terms of Service', href: '/docs/Qeja-Terms-of-Service.pdf', download: true },
-    { label: 'Data Protection', href: '/docs/Qeja-Data-Protection-Policy.pdf', download: true },
+    { label: 'Privacy Policy', href: '/api/docs/Qeja-Privacy-Policy.pdf', download: true },
+    { label: 'Terms of Service', href: '/api/docs/Qeja-Terms-of-Service.pdf', download: true },
+    { label: 'Data Protection', href: '/api/docs/Qeja-Data-Protection-Policy.pdf', download: true },
   ],
 }
 
@@ -72,16 +72,27 @@ export default function FooterSection() {
           <div>
             <h4 className="font-display font-semibold text-granite-200 text-sm mb-4">Company</h4>
             <ul className="space-y-2.5">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <button
-                    onClick={() => scrollTo(link.href)}
-                    className="text-granite-400 hover:text-granite-200 text-sm transition-colors"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
+              {footerLinks.company.map((link) =>
+                link.href.startsWith('mailto:') ? (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-granite-400 hover:text-granite-200 text-sm transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li key={link.label}>
+                    <button
+                      onClick={() => scrollTo(link.href)}
+                      className="text-granite-400 hover:text-granite-200 text-sm transition-colors"
+                    >
+                      {link.label}
+                    </button>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
