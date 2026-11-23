@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 // Theme mirrors the Qeja UI Kit (shadcn/ui) variables in Figma.
-// Colours are defined in src/styles/globals.css; light/dark follows the device setting.
+// Colours are defined in src/styles/globals.css. Light by default; dark when the visitor picks it (.dark on <html>).
 const withAlpha = (name) => `rgb(var(--${name}) / <alpha-value>)`
 
 module.exports = {
-  darkMode: 'media',
+  darkMode: 'class',
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
