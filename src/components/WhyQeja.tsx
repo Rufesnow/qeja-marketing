@@ -56,7 +56,7 @@ export default function WhyQeja() {
             <ul>
               {definitions.map(({ layer: l, title, description, icon: Icon }) => (
                 <li key={l}>
-                  <Item asChild size="sm" className="w-full md:hover:bg-accent/50">
+                  <Item asChild size="sm" className="w-full">
                     <button
                       type="button"
                       onClick={() => setLayer(l)}

@@ -24,7 +24,7 @@ function PlanCard({ plan, billing, className }: { plan: PricingPlan; billing: Bi
         <div className="flex flex-col gap-2">
           <p className="border-b pb-2 text-3xl font-semibold tracking-tight">{price === null ? 'Custom' : kes(price)}</p>
           <Muted>
-            {price === null ? plan.customPriceNote : billing === 'annual' ? 'per month, billed annually' : 'per month'}
+            {price === null ? plan.customPriceNote : 'per month'}
           </Muted>
           <Small>{plan.limits}</Small>
         </div>

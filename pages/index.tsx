@@ -26,26 +26,6 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="Qeja | AI-Powered Property Management System for East Africa" />
-        <meta
-          property="og:description"
-          content="Predictive AI that flags late payers before they're late. A tenant network that exposes problem renters before you sign them. Built for East African property managers."
-        />
-        <meta property="og:image" content="https://www.qe-ja.com/images/og-image.jpg" />
-        <meta property="og:url" content="https://www.qe-ja.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Qeja" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Qeja | AI-Powered Property Management System for East Africa" />
-        <meta
-          name="twitter:description"
-          content="AI-powered property management with predictive analytics and cross-property tenant screening. Built for East Africa."
-        />
-        <meta name="twitter:image" content="https://www.qe-ja.com/images/og-image.jpg" />
-
         {/* Canonical */}
         <link rel="canonical" href="https://www.qe-ja.com" />
 

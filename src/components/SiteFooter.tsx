@@ -16,7 +16,7 @@ export default function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-4 py-8">
         <div className="flex min-w-72 max-w-sm items-center gap-2">
           <Logo size={20} />
-          <Muted>© {new Date().getFullYear()} Qeja Real Estate Property Management.</Muted>
+          <Muted>© 2025 Qeja Real Estate Property Management.</Muted>
         </div>
         <ul className="flex flex-wrap gap-2 md:justify-end">
           {legal.map((l) => (

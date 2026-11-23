@@ -23,10 +23,9 @@ type Row = { title: string; description: string; badge: string; icon: LucideIcon
 
 const statIcons = [Building2, Wallet, TrendingUp]
 
-const layers: Record<Layer, { label: string; period: string; stats: Omit<Stat, 'icon'>[]; rows: Row[] }> = {
+const layers: Record<Layer, { label: string; stats: Omit<Stat, 'icon'>[]; rows: Row[] }> = {
   analytics: {
     label: 'Analytics',
-    period: 'November',
     stats: [
       { title: 'Occupancy', value: '94%', note: '45 of 48 units let' },
       { title: 'Collected', value: 'KES 2.1M', note: 'All M-Pesa verified' },
@@ -46,7 +45,6 @@ const layers: Record<Layer, { label: string; period: string; stats: Omit<Stat, '
   },
   bi: {
     label: 'Business Intelligence',
-    period: 'last 12 months',
     stats: [
       { title: 'Annual revenue', value: 'KES 24.6M', note: '8% up on last year' },
       { title: 'Tenant turnover', value: '11%', note: '5 move-outs this year' },
@@ -60,7 +58,6 @@ const layers: Record<Layer, { label: string; period: string; stats: Omit<Stat, '
   },
   ai: {
     label: 'AI Insights',
-    period: 'next 60 days',
     stats: [
       { title: 'Rent forecast', value: 'KES 1.9M', note: 'December, after late payers' },
       { title: 'Renewals at risk', value: '2 leases', note: 'Ending in January' },
@@ -104,7 +101,7 @@ export default function PortfolioDashboard({
     <Card className={className}>
       <CardHeader>
         <CardTitle>Portfolio overview</CardTitle>
-        <CardDescription>Westlands Court · 48 units · {layers[layer].period}</CardDescription>
+        <CardDescription>Westlands Court · 48 units · next 60 days</CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs value={layer} onValueChange={(v) => onLayerChange(v as Layer)} className="gap-4">
