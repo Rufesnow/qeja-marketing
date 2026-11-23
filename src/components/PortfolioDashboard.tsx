@@ -1,12 +1,15 @@
 import type { LucideIcon } from 'lucide-react'
 import {
-  BadgeCheck,
+  BarChart,
   Building2,
-  CalendarClock,
+  ClipboardList,
+  FilePenLine,
   LineChart,
   ReceiptText,
   Sparkles,
   TrendingUp,
+  UserMinus,
+  Users,
   Wallet,
   Wrench,
 } from 'lucide-react'
@@ -15,58 +18,51 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Item, ItemActions, ItemContent, ItemDescription, ItemMedia, ItemTitle } from '@/components/ui/item'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-// Placeholder figures from Figma (Slot / Hero preview). Replace with approved numbers before launch.
+// Content from Figma: Slot / Hero preview, variants Layer=Analytics / Business Intelligence / AI Insights.
+// Illustrative figures only.
 export type Layer = 'analytics' | 'bi' | 'ai'
 
 type Stat = { title: string; value: string; note: string; icon: LucideIcon }
-type Row = { title: string; description: string; badge: string; icon: LucideIcon; verified?: boolean }
+type Row = { title: string; description: string; badge: string; icon: LucideIcon }
 
-const statIcons = [Building2, Wallet, TrendingUp]
-
-const layers: Record<Layer, { label: string; stats: Omit<Stat, 'icon'>[]; rows: Row[] }> = {
+const layers: Record<Layer, { label: string; stats: Stat[]; rows: Row[] }> = {
   analytics: {
     label: 'Analytics',
     stats: [
-      { title: 'Occupancy', value: '94%', note: '45 of 48 units let' },
-      { title: 'Collected', value: 'KES 2.1M', note: 'All M-Pesa verified' },
-      { title: 'Maintenance', value: '4 open', note: 'Average response 6 hours' },
+      { title: 'Occupancy', value: '94%', note: '45 of 48 units let', icon: Building2 },
+      { title: 'Revenue', value: 'KES 2.03M', note: 'This month', icon: Wallet },
+      { title: 'Tasks', value: '5 pending', note: '2 urgent', icon: ClipboardList },
     ],
     rows: [
-      { title: 'Unit B2 · leaking tap', description: 'Reported today · plumber assigned', badge: 'Maintenance', icon: Wrench },
-      { title: 'Unit A7 · KES 38,000', description: 'Rent due in 3 days', badge: 'Due soon', icon: CalendarClock },
-      {
-        title: 'M-Pesa QFT7H2K9LM · KES 45,000',
-        description: 'Unit C2 · matched to November invoice',
-        badge: 'Verified',
-        icon: ReceiptText,
-        verified: true,
-      },
+      { title: 'Rent received · Unit 4B', description: 'KES 45,000 by M-Pesa · today', badge: 'Paid', icon: ReceiptText },
+      { title: 'Kitchen sink leaking · Unit 2A', description: 'Due 25 Nov · Peter Otieno', badge: 'High', icon: Wrench },
+      { title: 'Lease signed · Unit 7C', description: 'Grace Wanjiku · moves in 1 Dec', badge: 'Completed', icon: FilePenLine },
     ],
   },
   bi: {
     label: 'Business Intelligence',
     stats: [
-      { title: 'Annual revenue', value: 'KES 24.6M', note: '8% up on last year' },
-      { title: 'Tenant turnover', value: '11%', note: '5 move-outs this year' },
-      { title: 'Expenses', value: 'KES 3.2M', note: '2% under similar properties' },
+      { title: 'Revenue YTD', value: 'KES 21.8M', note: '+8.2% on last year', icon: Wallet },
+      { title: 'YoY growth', value: '+11%', note: 'Quarterly average', icon: TrendingUp },
+      { title: 'Retention', value: '86%', note: 'Above industry avg', icon: Users },
     ],
     rows: [
-      { title: 'January peak', description: 'Rent collection runs 6% higher after the holidays', badge: 'Seasonal', icon: LineChart },
-      { title: 'Block C turnover', description: 'Highest in your portfolio at 18%', badge: 'Turnover', icon: TrendingUp },
-      { title: 'Water costs', description: '12% above similar properties', badge: 'Benchmark', icon: LineChart },
+      { title: 'Quarterly revenue', description: '3 of 4 quarters grew on last year', badge: 'Year-over-year', icon: BarChart },
+      { title: 'Monthly growth', description: 'Revenue rose in 4 of the last 6 months', badge: 'Month-over-month', icon: LineChart },
+      { title: 'Occupancy', description: 'Averaged 92% against a 90% target', badge: 'On target', icon: Building2 },
     ],
   },
   ai: {
     label: 'AI Insights',
     stats: [
-      { title: 'Rent forecast', value: 'KES 1.9M', note: 'December, after late payers' },
-      { title: 'Renewals at risk', value: '2 leases', note: 'Ending in January' },
-      { title: 'At risk', value: '3 tenants', note: 'Flagged by Qeja AI' },
+      { title: 'Forecast', value: 'KES 2.07M', note: 'Next month', icon: LineChart },
+      { title: 'Tenants at risk', value: '3 tenants', note: 'Next 3 months', icon: UserMinus },
+      { title: 'Maintenance', value: 'KES 180K', note: 'Expected next quarter', icon: Wrench },
     ],
     rows: [
-      { title: 'Unit B4', description: 'Likely to pay late in about 3 weeks', badge: 'Payment risk', icon: Sparkles },
-      { title: 'Unit A12', description: 'Lease unlikely to renew in January', badge: 'Vacancy risk', icon: Sparkles },
-      { title: 'Water bill', description: '34% above the 6-month average', badge: 'Expense anomaly', icon: Sparkles },
+      { title: 'James Mwangi · Unit 12B', description: 'Likely to leave before his lease ends in February', badge: 'High risk', icon: Sparkles },
+      { title: 'Rent review · Westlands Heights', description: 'Room to raise rent 8% and stay fully let', badge: 'Revenue opportunity', icon: Sparkles },
+      { title: 'Block A plumbing', description: 'Repair costs set to rise next quarter', badge: 'Maintenance', icon: Sparkles },
     ],
   },
 }
@@ -101,7 +97,7 @@ export default function PortfolioDashboard({
     <Card className={className}>
       <CardHeader>
         <CardTitle>Portfolio overview</CardTitle>
-        <CardDescription>Westlands Court · 48 units · next 60 days</CardDescription>
+        <CardDescription>Westlands Heights Apartments · 48 units</CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs value={layer} onValueChange={(v) => onLayerChange(v as Layer)} className="gap-4">
@@ -115,13 +111,13 @@ export default function PortfolioDashboard({
           {layerOrder.map((l) => (
             <TabsContent key={l} value={l} className="flex flex-col gap-4">
               <div className="flex flex-wrap gap-3">
-                {layers[l].stats.map((s, i) => (
-                  <StatCard key={s.title} {...s} icon={statIcons[i]} />
+                {layers[l].stats.map((s) => (
+                  <StatCard key={s.title} {...s} />
                 ))}
               </div>
               <div className="flex flex-col gap-2">
                 {layers[l].rows.map(({ icon: Icon, ...r }) => (
-                  <Item key={r.title} size="sm" variant={r.verified ? 'muted' : 'outline'}>
+                  <Item key={r.title} size="sm" variant="outline">
                     <ItemMedia>
                       <Icon />
                     </ItemMedia>
@@ -130,14 +126,7 @@ export default function PortfolioDashboard({
                       <ItemDescription>{r.description}</ItemDescription>
                     </ItemContent>
                     <ItemActions>
-                      {r.verified ? (
-                        <Badge className="border-transparent bg-blue-500 text-white dark:bg-blue-600">
-                          <BadgeCheck />
-                          {r.badge}
-                        </Badge>
-                      ) : (
-                        <Badge variant="outline">{r.badge}</Badge>
-                      )}
+                      <Badge variant="outline">{r.badge}</Badge>
                     </ItemActions>
                   </Item>
                 ))}
