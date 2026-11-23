@@ -27,7 +27,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Qeja — Property Intelligence That Sees What's Coming" />
+        <meta property="og:title" content="Qeja | AI-Powered Property Management System for East Africa" />
         <meta
           property="og:description"
           content="Predictive AI that flags late payers before they're late. A tenant network that exposes problem renters before you sign them. Built for East African property managers."
@@ -39,7 +39,7 @@ export default function Home() {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Qeja — Property Intelligence That Sees What's Coming" />
+        <meta name="twitter:title" content="Qeja | AI-Powered Property Management System for East Africa" />
         <meta
           name="twitter:description"
           content="AI-powered property management with predictive analytics and cross-property tenant screening. Built for East Africa."
