@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Large } from '@/components/ui/typography'
 import Logo from '@/components/Logo'
+import ThemeToggle from '@/components/ThemeToggle'
 
 const links = [
   { label: 'Product', href: '#why-qeja' },
@@ -28,9 +29,12 @@ export default function SiteNav() {
             ))}
           </ul>
         </nav>
-        <Button asChild>
-          <a href="#sign-up">Ask a question</a>
-        </Button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Button asChild>
+            <a href="#sign-up">Ask a question</a>
+          </Button>
+        </div>
       </div>
       <Separator />
     </header>

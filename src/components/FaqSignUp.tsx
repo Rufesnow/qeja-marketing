@@ -24,7 +24,7 @@ const faqs = [
 
 export default function FaqSignUp() {
   return (
-    <section className="bg-muted px-6 py-16 lg:py-24">
+    <section className="bg-primary/5 px-6 py-16 lg:py-24">
       <div className="mx-auto flex max-w-6xl flex-wrap items-start gap-x-16 gap-y-12">
         <div className="flex min-w-80 flex-1 flex-col gap-6">
           <div className="flex max-w-lg flex-col gap-3">

@@ -9,10 +9,14 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        {/* Tells browsers the site styles both themes itself, so they follow the system setting instead of forcing dark */}
+        {/* Light by default; dark only when the visitor chooses it. Declaring both stops browsers forcing their own dark mode. */}
         <meta name="color-scheme" content="light dark" />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#ffffff" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');document.querySelector('meta[name=theme-color]').content='#0a0a0a'}}catch(e){}`,
+          }}
+        />
         <meta name="application-name" content="Qeja" />
 
         {/* Google Analytics 4 */}

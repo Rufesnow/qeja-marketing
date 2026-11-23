@@ -46,7 +46,7 @@ export default function WhyQeja() {
   const [layer, setLayer] = useState<Layer>('ai')
 
   return (
-    <section id="why-qeja" className="bg-muted px-6 py-16 lg:py-24">
+    <section id="why-qeja" className="bg-primary/5 px-6 py-16 lg:py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12">
         <div className="flex flex-wrap items-center gap-x-24 gap-y-12">
           <div className="flex min-w-80 max-w-sm flex-1 flex-col gap-3">
@@ -56,7 +56,7 @@ export default function WhyQeja() {
             <ul>
               {definitions.map(({ layer: l, title, description, icon: Icon }) => (
                 <li key={l}>
-                  <Item asChild size="sm" className="w-full">
+                  <Item asChild size="sm" className={layer === l ? 'w-full bg-primary/10' : 'w-full'}>
                     <button
                       type="button"
                       onClick={() => setLayer(l)}
@@ -64,11 +64,11 @@ export default function WhyQeja() {
                       aria-controls="portfolio-dashboard"
                       className="cursor-default md:cursor-pointer"
                     >
-                      <ItemMedia>
+                      <ItemMedia className="text-primary">
                         <Icon />
                       </ItemMedia>
                       <ItemContent>
-                        <ItemTitle>{title}</ItemTitle>
+                        <ItemTitle className="text-primary">{title}</ItemTitle>
                         <ItemDescription>{description}</ItemDescription>
                       </ItemContent>
                     </button>
