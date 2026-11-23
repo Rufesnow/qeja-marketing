@@ -18,7 +18,7 @@ export default function Home() {
         <title>Qeja | AI-Powered Property Management System for East Africa</title>
         <meta
           name="description"
-          content="The only property management platform in East Africa with predictive AI and a cross-property tenant network. Know which tenants will pay late, which leases won't renew, and which applicants to avoid — before it costs you."
+          content="The only property management platform in East Africa with predictive AI and a cross-property tenant network. Know which tenants are at risk, which leases won't renew and which costs are about to rise — before it costs you."
         />
         <meta
           name="keywords"

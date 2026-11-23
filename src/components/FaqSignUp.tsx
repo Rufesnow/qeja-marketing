@@ -32,8 +32,8 @@ export default function FaqSignUp() {
               The next problem tenant is <span className="text-primary">already filling out an application.</span>
             </H2>
             <Lead>
-              Without the Qeja Tenant Network, you have no way to know. Without AI Insights, you won’t see the
-              default coming until rent day passes.
+              Without the Qeja Tenant Network, you have no way to know. Without AI Insights, you won’t see it
+              coming until rent day passes.
             </Lead>
           </div>
           <div id="faq" className="flex scroll-mt-4 flex-col gap-6">

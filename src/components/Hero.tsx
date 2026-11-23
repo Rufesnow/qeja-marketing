@@ -15,8 +15,8 @@ export default function Hero() {
         </Badge>
         <H1>Know what’s coming before it costs you.</H1>
         <Lead>
-          Qeja predicts which tenants will default, which leases won’t renew and which expenses look
-          wrong — up to 60 days before you’d notice. Rent, M-Pesa reconciliation, leases and tenant
+          Qeja spots which tenants are at risk, which leases won’t renew and which costs are about to
+          rise — up to 60 days before you’d notice. Rent, M-Pesa reconciliation, leases and tenant
           screening run on the same platform.
         </Lead>
         <div className="flex flex-wrap justify-center gap-3">

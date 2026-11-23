@@ -15,7 +15,7 @@ const definitions: { layer: Layer; title: string; description: string; icon: typ
     description: 'What happened before: revenue trends, turnover and expense benchmarks.',
     icon: TrendingUp,
   },
-  { layer: 'ai', title: 'AI Insights', description: 'What will happen next: late payers, non-renewals and unusual expenses.', icon: BrainCircuit },
+  { layer: 'ai', title: 'AI Insights', description: 'What will happen next: tenants at risk, non-renewals and rising costs.', icon: BrainCircuit },
 ]
 
 const proof = [
@@ -36,7 +36,7 @@ const proof = [
   {
     title: 'Warnings 60 days ahead',
     description:
-      'Qeja AI flags tenants likely to pay late, leases unlikely to renew and expenses that look wrong, early enough to act on them.',
+      'Qeja AI flags tenants at risk, leases unlikely to renew and costs about to rise, early enough to act on them.',
     stat: '85%',
     note: 'Vacancy prediction accuracy',
   },

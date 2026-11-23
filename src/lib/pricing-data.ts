@@ -37,7 +37,7 @@ export const pricingPlans: PricingPlan[] = [
     features: [
       'Everything in Starter, plus:',
       'AI automations and verification',
-      'AI default & vacancy forecasting',
+      'AI risk & vacancy forecasting',
       'Full AI Insights dashboard',
       'Qeja Tenant Network access',
       'Priority support',
@@ -54,7 +54,7 @@ export const pricingPlans: PricingPlan[] = [
     limits: 'Unlimited users · unlimited properties',
     features: [
       'Everything in Professional, plus:',
-      'Revenue forecasting & anomaly detection',
+      'Revenue & maintenance forecasting',
       'Tenant risk scoring (0–100)',
       'API access & custom integrations',
       'Dedicated account manager & SLA',
