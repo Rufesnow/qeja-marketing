@@ -6,6 +6,10 @@ import Features from '@/components/Features'
 import Pricing from '@/components/Pricing'
 import FaqSignUp from '@/components/FaqSignUp'
 import SiteFooter from '@/components/SiteFooter'
+import { pricingPlans } from '@/lib/pricing-data'
+
+// Monthly prices of the plans that have a listed price (Enterprise is custom).
+const listedPrices = pricingPlans.flatMap((p) => (p.monthlyPrice === null ? [] : [p.monthlyPrice]))
 
 export default function Home() {
   return (
@@ -58,14 +62,10 @@ export default function Home() {
               applicationCategory: 'BusinessApplication',
               operatingSystem: 'Web',
               offers: {
-                '@type': 'Offer',
-                price: '0',
+                '@type': 'AggregateOffer',
+                lowPrice: String(Math.min(...listedPrices)),
+                highPrice: String(Math.max(...listedPrices)),
                 priceCurrency: 'KES',
-              },
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.8',
-                ratingCount: '120',
               },
             }),
           }}
