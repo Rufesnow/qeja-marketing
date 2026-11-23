@@ -14,7 +14,7 @@ export default function SiteNav() {
     <header className="px-6">
       <div className="mx-auto flex max-w-6xl items-center justify-between py-4">
         <a href="#" className="flex items-center gap-2" aria-label="Qeja home">
-          <Logo />
+          <Logo size={32} />
           <Large>Qeja</Large>
         </a>
         <nav aria-label="Main" className="hidden md:block">
@@ -32,7 +32,7 @@ export default function SiteNav() {
           <a href="#sign-up">Ask a question</a>
         </Button>
       </div>
-      <Separator className="mx-auto max-w-6xl" />
+      <Separator />
     </header>
   )
 }

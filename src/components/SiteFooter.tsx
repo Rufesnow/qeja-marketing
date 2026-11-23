@@ -12,16 +12,16 @@ const legal = [
 export default function SiteFooter() {
   return (
     <footer className="px-6">
-      <Separator className="mx-auto max-w-6xl" />
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-4 py-8">
-        <div className="flex min-w-72 max-w-sm items-center gap-2">
-          <Logo size={20} />
+      <Separator />
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-y-4 py-8">
+        <div className="flex min-w-72 max-w-sm flex-1 items-center gap-2">
+          <Logo size={24} />
           <Muted>© 2025 Qeja Real Estate Property Management.</Muted>
         </div>
-        <ul className="flex flex-wrap gap-2 md:justify-end">
+        <ul className="flex min-w-64 flex-1 flex-wrap justify-end gap-2">
           {legal.map((l) => (
             <li key={l.href}>
-              <Button asChild variant="link" size="sm">
+              <Button asChild variant="link" size="sm" className="text-xs">
                 <a href={l.href} download>
                   {l.label}
                 </a>

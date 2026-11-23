@@ -19,7 +19,7 @@ export const pricingPlans: PricingPlan[] = [
     description: 'For small landlords getting organised.',
     monthlyPrice: 1950,
     annualPrice: 1560,
-    limits: 'Up to 5 users · 10 properties',
+    limits: 'Up to 5 users · 10  properties',
     features: [
       'Property & tenant management',
       'Digital leases & e-signatures',

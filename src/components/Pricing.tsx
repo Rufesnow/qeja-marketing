@@ -22,11 +22,11 @@ function PlanCard({ plan, billing, className }: { plan: PricingPlan; billing: Bi
       </CardHeader>
       <CardContent className="flex flex-1 flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <p className="border-b pb-2 text-3xl font-semibold tracking-tight">{price === null ? 'Custom' : kes(price)}</p>
+          <p className="border-b pb-2 text-3xl font-semibold">{price === null ? 'Custom' : kes(price)}</p>
           <Muted>
             {price === null ? plan.customPriceNote : 'per month'}
           </Muted>
-          <Small>{plan.limits}</Small>
+          <Small className="whitespace-pre-wrap">{plan.limits}</Small>
         </div>
         <Separator />
         <List>
@@ -51,7 +51,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="px-6 py-16 lg:py-24">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8">
-        <div className="flex max-w-3xl flex-col items-center gap-3 text-center">
+        <div className="flex w-full max-w-3xl flex-col items-center gap-3 text-center">
           <Badge variant="secondary">Pricing</Badge>
           <H2>Predictive AI using real data that pays for itself.</H2>
           <Lead>No hosting charges, no user limits (where applicable) and no credit card required.</Lead>
@@ -74,7 +74,7 @@ export default function Pricing() {
           </TabsList>
         </Tabs>
 
-        <div className="flex w-full flex-wrap justify-center gap-6">
+        <div className="flex w-full flex-wrap items-stretch justify-center gap-6">
           {pricingPlans.map((p) => (
             <PlanCard
               key={p.name}

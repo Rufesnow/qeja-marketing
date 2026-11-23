@@ -48,8 +48,8 @@ export default function WhyQeja() {
   return (
     <section id="why-qeja" className="bg-muted px-6 py-16 lg:py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-24">
-          <div className="flex min-w-80 max-w-sm flex-col gap-3">
+        <div className="flex flex-wrap items-center gap-x-24 gap-y-12">
+          <div className="flex min-w-80 max-w-sm flex-1 flex-col gap-3">
             <Badge variant="secondary">Why Qeja</Badge>
             <H2>Stop losing income to things you could have seen coming.</H2>
             <Lead>Most property software tells you what happened yesterday. Qeja gives you three layers of insight:</Lead>
@@ -84,7 +84,7 @@ export default function WhyQeja() {
 
         <div className="-mx-6 flex snap-x snap-mandatory scroll-px-6 gap-6 overflow-x-auto px-6 pb-2 lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0">
           {proof.map((p) => (
-            <Card key={p.title} className="w-72 shrink-0 snap-start lg:w-auto lg:flex-1">
+            <Card key={p.title} className="w-72 shrink-0 snap-start lg:w-auto lg:min-w-72 lg:flex-1">
               <CardHeader>
                 <CardTitle>{p.title}</CardTitle>
                 <CardDescription>{p.description}</CardDescription>

@@ -8,7 +8,7 @@ const trust = ['Kenya DPA compliant', 'GDPR compliant', 'AI powered automation']
 export default function Hero() {
   return (
     <section className="px-6 py-16 lg:py-24">
-      <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+      <div className="mx-auto flex min-w-80 max-w-3xl flex-col items-center gap-6 text-center">
         <Badge variant="outline">
           <Sparkles />
           The only ML-powered property platform in East Africa

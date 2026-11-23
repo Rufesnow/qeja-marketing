@@ -75,8 +75,8 @@ export const layerOrder: Layer[] = ['analytics', 'bi', 'ai']
 
 function StatCard({ title, value, note, icon: Icon }: Stat) {
   return (
-    <div className="flex min-w-36 flex-1 flex-col gap-2 rounded-xl border bg-card p-6 shadow-sm">
-      <div className="flex items-start justify-between gap-2 text-sm">
+    <div className="flex min-w-36 flex-1 flex-col gap-2 rounded-lg border bg-card p-6 text-card-foreground shadow-xs">
+      <div className="flex items-center justify-between gap-2 text-sm font-medium">
         <span>{title}</span>
         <Icon className="size-4 shrink-0" />
       </div>

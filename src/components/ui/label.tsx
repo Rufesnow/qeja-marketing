@@ -8,7 +8,7 @@ const Label = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
-    className={cn('flex select-none items-center gap-2 text-sm font-medium leading-none', className)}
+    className={cn('flex select-none items-center gap-2 text-sm font-medium', className)}
     {...props}
   />
 ))

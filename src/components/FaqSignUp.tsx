@@ -25,7 +25,7 @@ const faqs = [
 export default function FaqSignUp() {
   return (
     <section className="bg-muted px-6 py-16 lg:py-24">
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-12 lg:flex-row lg:gap-16">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-start gap-x-16 gap-y-12">
         <div className="flex min-w-80 flex-1 flex-col gap-6">
           <div className="flex max-w-lg flex-col gap-3">
             <H2>
@@ -38,11 +38,11 @@ export default function FaqSignUp() {
           </div>
           <div id="faq" className="flex scroll-mt-4 flex-col gap-6">
             <Badge variant="secondary">FAQ</Badge>
-            <Accordion type="single" collapsible defaultValue="faq-0">
+            <Accordion type="single" collapsible defaultValue="faq-2">
               {faqs.map((f, i) => (
                 <AccordionItem key={f.q} value={`faq-${i}`}>
                   <AccordionTrigger>{f.q}</AccordionTrigger>
-                  <AccordionContent>{f.a}</AccordionContent>
+                  <AccordionContent className="text-foreground">{f.a}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

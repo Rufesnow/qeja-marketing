@@ -65,7 +65,7 @@ export default function SignUpForm() {
   const field = (f: (typeof fields)[number]) => {
     const error = errors[f.name]?.message
     return (
-      <div key={f.name} className="flex flex-1 flex-col gap-3">
+      <div key={f.name} className="flex min-w-0 flex-1 flex-col gap-3">
         <Label htmlFor={f.name}>{f.label}</Label>
         <Input
           id={f.name}
@@ -86,7 +86,7 @@ export default function SignUpForm() {
   }
 
   return (
-    <Card id="sign-up" className="w-full min-w-80 max-w-lg scroll-mt-4 lg:flex-1">
+    <Card id="sign-up" className="min-w-80 max-w-lg flex-1 scroll-mt-4">
       {submitted ? (
         <CardContent className="flex flex-col items-center gap-3 py-8 text-center" role="status">
           <CheckCircle className="size-12 text-primary" />
@@ -100,7 +100,7 @@ export default function SignUpForm() {
             <CardDescription>Be among the first to try Qeja. We’ll reach out within 24 hours.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
-            <div className="flex flex-col gap-4 sm:flex-row">{fields.slice(0, 2).map(field)}</div>
+            <div className="flex gap-4">{fields.slice(0, 2).map(field)}</div>
             {fields.slice(2).map(field)}
             <Muted>No credit card required · 30-day money-back guarantee · DPA &amp; GDPR compliant</Muted>
             {serverError && (
@@ -111,9 +111,8 @@ export default function SignUpForm() {
           </CardContent>
           <CardFooter>
             <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? <Loader2 className="animate-spin" /> : null}
-              Get early access
-              {!isSubmitting && <ArrowRight />}
+              <span className="flex-1 text-center">Get early access</span>
+              {isSubmitting ? <Loader2 className="animate-spin" /> : <ArrowRight />}
             </Button>
           </CardFooter>
         </form>
