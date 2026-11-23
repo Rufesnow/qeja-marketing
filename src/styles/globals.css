@@ -1,10 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Values from the Qeja UI Kit "2. Theme" variables (Figma). RGB channels so Tailwind opacity works. */
 @layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 10 10 10;
+    --card: 255 255 255;
+    --card-foreground: 10 10 10;
+    --primary: 30 122 129; /* burnt teal #1E7A81 */
+    --primary-foreground: 250 250 250;
+    --secondary: 245 245 245;
+    --secondary-foreground: 23 23 23;
+    --muted: 245 245 245;
+    --muted-foreground: 115 115 115;
+    --accent: 245 245 245;
+    --accent-foreground: 23 23 23;
+    --destructive: 220 38 38;
+    --ring: 30 122 129;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --input-bg: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 10 10 10;
+      --foreground: 250 250 250;
+      --card: 23 23 23;
+      --card-foreground: 250 250 250;
+      --primary: 2 197 222; /* cyan #02C5DE */
+      --primary-foreground: 23 23 23;
+      --secondary: 38 38 38;
+      --secondary-foreground: 250 250 250;
+      --muted: 38 38 38;
+      --muted-foreground: 163 163 163;
+      --accent: 38 38 38;
+      --accent-foreground: 250 250 250;
+      --destructive: 255 100 103;
+      --ring: 2 197 222;
+      --border: rgb(255 255 255 / 0.1);
+      --input: rgb(255 255 255 / 0.15);
+      --input-bg: rgb(255 255 255 / 0.045);
+    }
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -12,36 +53,10 @@
   }
 
   body {
-    @apply bg-granite-50 text-granite-700 font-body;
+    @apply bg-background font-sans text-foreground;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
-  }
-}
-
-@layer components {
-  /* Compass yellow CTA button */
-  .btn-compass {
-    @apply bg-compass text-granite-900 font-semibold px-6 py-3 rounded-lg
-           transition-all duration-200 hover:bg-compass-dark
-           focus:outline-none focus:ring-2 focus:ring-compass focus:ring-offset-2
-           active:scale-[0.98];
-  }
-
-  /* Outline button */
-  .btn-outline {
-    @apply border-2 border-granite-300 text-granite-700 font-semibold px-6 py-3 rounded-lg
-           transition-all duration-200 hover:border-granite-500 hover:text-granite-900
-           focus:outline-none focus:ring-2 focus:ring-granite-400 focus:ring-offset-2
-           active:scale-[0.98];
-  }
-
-  /* Dark button */
-  .btn-dark {
-    @apply bg-granite-800 text-granite-50 font-semibold px-6 py-3 rounded-lg
-           transition-all duration-200 hover:bg-granite-900
-           focus:outline-none focus:ring-2 focus:ring-granite-600 focus:ring-offset-2
-           active:scale-[0.98];
+  section[id] {
+    scroll-margin-top: 1rem;
   }
 }

@@ -1,88 +1,66 @@
+// Plans as designed in Figma (Qeja Website › Pricing). Prices are KES per month.
 export interface PricingPlan {
   name: string
   description: string
   monthlyPrice: number | null // null = custom pricing
-  annualPrice: number | null
-  currency: string
-  highlighted: boolean
-  badge?: string
+  annualPrice: number | null // per month, billed annually
+  customPriceNote?: string
+  limits: string
   features: string[]
-  limits: {
-    users: string
-    properties: string
-  }
   ctaLabel: string
-  ctaStyle: 'outline' | 'compass' | 'dark'
+  recommended: boolean
 }
+
+export const ANNUAL_DISCOUNT_LABEL = 'Annual — save 20%'
 
 export const pricingPlans: PricingPlan[] = [
   {
     name: 'Starter',
-    description: 'Perfect for small property managers getting started.',
-    monthlyPrice: 0,
-    annualPrice: 0,
-    currency: 'KES',
-    highlighted: false,
+    description: 'For small landlords getting organised.',
+    monthlyPrice: 1950,
+    annualPrice: 1560,
+    limits: 'Up to 5 users · 10  properties',
     features: [
-      'Basic property management',
-      'Tenant profiles & documents',
-      'Analytics & Business Intelligence',
-      'Multi-channel communications',
-      'Digital contracts & e-signatures',
-      'Community support',
+      'Property & tenant management',
+      'Digital leases & e-signatures',
+      'SMS, Tenant verifications, Fraud detection, Analytics dashboard and Community support',
     ],
-    limits: {
-      users: 'Up to 5 users',
-      properties: 'Up to 10 properties',
-    },
-    ctaLabel: 'Get Started Free',
-    ctaStyle: 'outline',
+    ctaLabel: 'Get started',
+    recommended: false,
   },
   {
     name: 'Professional',
-    description: 'For growing firms that need powerful tools.',
-    monthlyPrice: 4999,
-    annualPrice: 3999,
-    currency: 'KES',
-    highlighted: true,
-    badge: 'Most Popular',
+    description: 'For growing firms that want the AI.',
+    monthlyPrice: 3999,
+    annualPrice: 3199,
+    limits: 'Up to 25 users · 100 properties',
     features: [
       'Everything in Starter, plus:',
-      'M-Pesa payment verification',
+      'AI automations and verification',
+      'AI risk & vacancy forecasting',
       'Full AI Insights dashboard',
-      'AI payment default prediction',
-      'AI vacancy forecasting',
       'Qeja Tenant Network access',
       'Priority support',
     ],
-    limits: {
-      users: 'Up to 25 users',
-      properties: 'Up to 100 properties',
-    },
-    ctaLabel: 'Start Free Trial',
-    ctaStyle: 'compass',
+    ctaLabel: 'Recommended choice',
+    recommended: true,
   },
   {
     name: 'Enterprise',
-    description: 'For large organizations with custom needs.',
+    description: 'For large portfolios with custom needs.',
     monthlyPrice: null,
     annualPrice: null,
-    currency: 'KES',
-    highlighted: false,
+    customPriceNote: 'Talk to us about your portfolio.',
+    limits: 'Unlimited users · unlimited properties',
     features: [
       'Everything in Professional, plus:',
-      'AI revenue forecasting & anomaly detection',
-      'Tenant risk scoring for applicants',
-      'Custom integrations & API access',
-      'Dedicated account manager',
-      'SLA & uptime guarantees',
+      'Revenue & maintenance forecasting',
+      'Tenant risk scoring (0–100)',
+      'API access & custom integrations',
+      'Dedicated account manager & SLA',
       'On-premise deployment option',
     ],
-    limits: {
-      users: 'Unlimited users',
-      properties: 'Unlimited properties',
-    },
-    ctaLabel: 'Contact Sales',
-    ctaStyle: 'dark',
+    ctaLabel: 'Contact sales',
+    recommended: false,
   },
 ]
