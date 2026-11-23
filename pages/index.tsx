@@ -1,20 +1,17 @@
 import Head from 'next/head'
-import LandingNav from '@/components/LandingNav'
-import HeroSection from '@/components/HeroSection'
-import PainPointsSection from '@/components/PainPointsSection'
-import StatsSection from '@/components/StatsSection'
-import IntelligenceSection from '@/components/IntelligenceSection'
-import FeaturesSection from '@/components/FeaturesSection'
-import IntegrationsSection from '@/components/IntegrationsSection'
-import PricingSection from '@/components/PricingSection'
-import CTASection from '@/components/CTASection'
-import FooterSection from '@/components/FooterSection'
+import SiteNav from '@/components/SiteNav'
+import Hero from '@/components/Hero'
+import WhyQeja from '@/components/WhyQeja'
+import Features from '@/components/Features'
+import Pricing from '@/components/Pricing'
+import FaqSignUp from '@/components/FaqSignUp'
+import SiteFooter from '@/components/SiteFooter'
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Qeja | AI-Powered Property Intelligence for East Africa</title>
+        <title>Qeja | AI-Powered Property Management System for East Africa</title>
         <meta
           name="description"
           content="The only property management platform in East Africa with predictive AI and a cross-property tenant network. Know which tenants will pay late, which leases won't renew, and which applicants to avoid — before it costs you."
@@ -75,18 +72,15 @@ export default function Home() {
         />
       </Head>
 
+      <SiteNav />
       <main>
-        <LandingNav />
-        <HeroSection />
-        <StatsSection />
-        <PainPointsSection />
-        <IntelligenceSection />
-        <FeaturesSection />
-        <IntegrationsSection />
-        <PricingSection />
-        <CTASection />
-        <FooterSection />
+        <Hero />
+        <WhyQeja />
+        <Features />
+        <Pricing />
+        <FaqSignUp />
       </main>
+      <SiteFooter />
     </>
   )
 }

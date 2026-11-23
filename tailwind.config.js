@@ -1,60 +1,50 @@
 /** @type {import('tailwindcss').Config} */
+// Theme mirrors the Qeja UI Kit (shadcn/ui) variables in Figma.
+// Colours are defined in src/styles/globals.css; light/dark follows the device setting.
+const withAlpha = (name) => `rgb(var(--${name}) / <alpha-value>)`
+
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './src/**/*.{js,ts,jsx,tsx}',
-  ],
+  darkMode: 'media',
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        granite: {
-          50: '#F7F7F5',
-          100: '#EEEDE9',
-          200: '#D9D7D0',
-          300: '#B8B4AA',
-          400: '#97928A',
-          500: '#7A756C',
-          600: '#605C55',
-          700: '#4A4740',
-          800: '#333129',
-          900: '#1E1D18',
-        },
-        forest: {
-          400: '#5B9A6D',
-          500: '#3D7A50',
-          600: '#2D5F3C',
-        },
-        'rivian-blue': '#3B6B9F',
-        compass: {
-          DEFAULT: '#DEB526',
-          dark: '#C5A020',
-        },
+        background: withAlpha('background'),
+        foreground: withAlpha('foreground'),
+        card: { DEFAULT: withAlpha('card'), foreground: withAlpha('card-foreground') },
+        primary: { DEFAULT: withAlpha('primary'), foreground: withAlpha('primary-foreground') },
+        secondary: { DEFAULT: withAlpha('secondary'), foreground: withAlpha('secondary-foreground') },
+        muted: { DEFAULT: withAlpha('muted'), foreground: withAlpha('muted-foreground') },
+        accent: { DEFAULT: withAlpha('accent'), foreground: withAlpha('accent-foreground') },
+        destructive: withAlpha('destructive'),
+        ring: withAlpha('ring'),
+        // border/input carry their own alpha in dark mode, so they are full colours
+        border: 'var(--border)',
+        input: 'var(--input)',
+        'input-bg': 'var(--input-bg)',
+      },
+      borderColor: { DEFAULT: 'var(--border)' },
+      borderRadius: {
+        xl: '14px',
+        lg: '10px',
+        md: '8px',
+        sm: '6px',
       },
       fontFamily: {
-        display: ['"Outfit"', 'system-ui', 'sans-serif'],
-        body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
       },
-      animation: {
-        'marquee': 'marquee 30s linear infinite',
-        'marquee-reverse': 'marquee-reverse 30s linear infinite',
-        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'count-up': 'countUp 2s ease-out forwards',
+      boxShadow: {
+        xs: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
       },
       keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        'marquee-reverse': {
-          '0%': { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
+        'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
+        'accordion-up': { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 }
