@@ -26,7 +26,7 @@ export default function Features() {
           {features.map(({ icon: Icon, ...f }) => (
             <li key={f.title} className="w-72 shrink-0 snap-start lg:w-auto lg:min-w-72 lg:flex-1">
               <Item variant="outline" className="h-full">
-                <ItemMedia>
+                <ItemMedia className="text-primary">
                   <Icon />
                 </ItemMedia>
                 <ItemContent>

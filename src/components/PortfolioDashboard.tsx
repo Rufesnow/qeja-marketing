@@ -118,7 +118,7 @@ export default function PortfolioDashboard({
               <div className="flex flex-col gap-2">
                 {layers[l].rows.map(({ icon: Icon, ...r }) => (
                   <Item key={r.title} size="sm" variant="outline">
-                    <ItemMedia>
+                    <ItemMedia className="text-primary">
                       <Icon />
                     </ItemMedia>
                     <ItemContent>
