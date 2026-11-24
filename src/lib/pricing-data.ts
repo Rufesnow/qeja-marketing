@@ -8,7 +8,7 @@ export interface PricingPlan {
   limits: string
   features: string[]
   ctaLabel: string
-  recommended: boolean
+  recommended: boolean // shown with a primary-coloured border, no badge
 }
 
 export const ANNUAL_DISCOUNT_LABEL = 'Annual — save 20%'
@@ -19,13 +19,17 @@ export const pricingPlans: PricingPlan[] = [
     description: 'For small landlords getting organised.',
     monthlyPrice: 1950,
     annualPrice: 1560,
-    limits: 'Up to 5 users · 10  properties',
+    limits: 'Up to 5 users · 10 properties/units',
     features: [
       'Property & tenant management',
       'Digital leases & e-signatures',
-      'SMS, Tenant verifications, Fraud detection, Analytics dashboard and Community support',
+      'SMS reminders',
+      'Tenant verifications',
+      'Fraud detection',
+      'Analytics dashboard',
+      'AI Business Intelligence',
     ],
-    ctaLabel: 'Get started',
+    ctaLabel: 'Talk to us',
     recommended: false,
   },
   {
@@ -33,16 +37,16 @@ export const pricingPlans: PricingPlan[] = [
     description: 'For growing firms that want the AI.',
     monthlyPrice: 3999,
     annualPrice: 3199,
-    limits: 'Up to 25 users · 100 properties',
+    limits: 'Up to 25 users · 100 properties/units',
     features: [
       'Everything in Starter, plus:',
       'AI automations and verification',
       'AI risk & vacancy forecasting',
       'Full AI Insights dashboard',
-      'Qeja Tenant Network access',
+      'Verified Rental History',
       'Priority support',
     ],
-    ctaLabel: 'Recommended choice',
+    ctaLabel: 'Talk to us',
     recommended: true,
   },
   {
@@ -51,7 +55,7 @@ export const pricingPlans: PricingPlan[] = [
     monthlyPrice: null,
     annualPrice: null,
     customPriceNote: 'Talk to us about your portfolio.',
-    limits: 'Unlimited users · unlimited properties',
+    limits: 'Unlimited users · unlimited properties/units',
     features: [
       'Everything in Professional, plus:',
       'Revenue & maintenance forecasting',
@@ -60,7 +64,7 @@ export const pricingPlans: PricingPlan[] = [
       'Dedicated account manager & SLA',
       'On-premise deployment option',
     ],
-    ctaLabel: 'Contact sales',
+    ctaLabel: 'Talk to sales',
     recommended: false,
   },
 ]

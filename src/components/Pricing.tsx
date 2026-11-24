@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -15,7 +14,7 @@ const kes = (n: number) => `KES ${n.toLocaleString('en-KE')}`
 function PlanCard({ plan, billing, className }: { plan: PricingPlan; billing: Billing; className?: string }) {
   const price = billing === 'annual' ? plan.annualPrice : plan.monthlyPrice
   return (
-    <Card className={cn('w-full min-w-72 max-w-lg flex-1', className)}>
+    <Card className={cn('w-full min-w-72 max-w-lg flex-1', plan.recommended && 'border-2 border-primary', className)}>
       <CardHeader>
         <CardTitle>{plan.name}</CardTitle>
         <CardDescription>{plan.description}</CardDescription>
@@ -37,7 +36,7 @@ function PlanCard({ plan, billing, className }: { plan: PricingPlan; billing: Bi
       </CardContent>
       <CardFooter>
         <Button asChild size="lg" variant={plan.recommended ? 'default' : 'outline'} className="w-full">
-          <a href="#sign-up">{plan.ctaLabel}</a>
+          <a href="#contact">{plan.ctaLabel}</a>
         </Button>
       </CardFooter>
     </Card>
@@ -50,11 +49,10 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="px-6 py-16 lg:py-24">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8">
-        <div className="flex w-full max-w-3xl flex-col items-center gap-3 text-center">
-          <Badge variant="secondary">Pricing</Badge>
-          <H2>Predictive AI using real data that pays for itself.</H2>
-          <Lead>No hosting charges, no user limits (where applicable) and no credit card required.</Lead>
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-8">
+        <div className="flex w-full max-w-3xl flex-col gap-3">
+          <H2>Simple pricing that pays for itself.</H2>
+          <Lead>No hosting charges, and a 30-day money-back guarantee.</Lead>
         </div>
 
         {/* Desktop: billing toggle. Tablet/mobile: plan switcher. */}

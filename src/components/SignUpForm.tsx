@@ -33,7 +33,7 @@ const fields: { name: keyof FormInput; label: string; placeholder: string; type?
 ]
 
 export default function SignUpForm() {
-  const [submitted, setSubmitted] = useState(false)
+  const [submittedName, setSubmittedName] = useState('')
   const [serverError, setServerError] = useState('')
   const {
     register,
@@ -54,7 +54,7 @@ export default function SignUpForm() {
         setServerError(body.error || 'Something went wrong. Please try again.')
         return
       }
-      setSubmitted(true)
+      setSubmittedName(data.firstName)
       const gtag = (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag
       gtag?.('event', 'sign_up_form_submit', { event_category: 'engagement' })
     } catch {
@@ -86,23 +86,23 @@ export default function SignUpForm() {
   }
 
   return (
-    <Card id="sign-up" className="min-w-80 max-w-lg flex-1 scroll-mt-4">
-      {submitted ? (
+    <Card id="contact" className="min-w-80 max-w-lg flex-1 scroll-mt-4">
+      {submittedName ? (
         <CardContent className="flex flex-col items-center gap-3 py-8 text-center" role="status">
           <CheckCircle className="size-12 text-primary" />
-          <CardTitle>Thank you!</CardTitle>
-          <CardDescription>We’ll be in touch within 24 hours to get you started.</CardDescription>
+          <CardTitle>Thanks, {submittedName}.</CardTitle>
+          <CardDescription>Expect a call from our team within one business day.</CardDescription>
         </CardContent>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-6">
           <CardHeader>
-            <CardTitle>Sign up for early access</CardTitle>
-            <CardDescription>Be among the first to try Qeja. We’ll reach out within 24 hours.</CardDescription>
+            <CardTitle>Let’s talk about your properties</CardTitle>
+            <CardDescription>Tell us a little about your portfolio. We’ll call you within one business day.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <div className="flex gap-4">{fields.slice(0, 2).map(field)}</div>
             {fields.slice(2).map(field)}
-            <Muted>No credit card required · 30-day money-back guarantee · DPA &amp; GDPR compliant</Muted>
+            <Muted>No commitment · Your details stay private · Kenya DPA &amp; GDPR compliant</Muted>
             {serverError && (
               <p className="text-sm text-destructive" role="alert">
                 {serverError}
@@ -111,7 +111,7 @@ export default function SignUpForm() {
           </CardContent>
           <CardFooter>
             <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-              <span className="flex-1 text-center">Get early access</span>
+              <span className="flex-1 text-center">Request a call</span>
               {isSubmitting ? <Loader2 className="animate-spin" /> : <ArrowRight />}
             </Button>
           </CardFooter>
