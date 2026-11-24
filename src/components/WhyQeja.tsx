@@ -11,15 +11,15 @@ export default function WhyQeja() {
   return (
     <section id="why-qeja" className="bg-primary/5 px-6 py-16 lg:py-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-12">
-        {/* 30px (kit H2) on tablet and mobile; 48px statement on desktop. */}
-        <H2 className="max-w-[960px] lg:text-5xl lg:leading-none">
+        {/* 30px (kit H2) on tablet and mobile; 48px statement on desktop; no rule under it. */}
+        <H2 className="max-w-[960px] border-b-0 pb-0 lg:text-5xl lg:leading-none">
           Stop losing income to things you could have seen coming.
         </H2>
-        <ul className="grid gap-10 md:grid-cols-3 md:gap-12">
+        <ul className="grid gap-x-12 gap-y-10 md:grid-cols-3">
           {points.map((p) => (
             <li key={p.title} className="flex flex-col gap-2">
-              <H3 className="text-3xl">{p.title}</H3>
-              <Lead>{p.note}</Lead>
+              <H3 className="text-3xl uppercase">{p.title}</H3>
+              <Lead className="text-lg">{p.note}</Lead>
             </li>
           ))}
         </ul>

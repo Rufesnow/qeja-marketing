@@ -34,7 +34,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: 'Professional',
-    description: 'For growing firms that want the AI.',
+    description: 'For growing firms. AI/ML Included.',
     monthlyPrice: 3999,
     annualPrice: 3199,
     limits: 'Up to 25 users · 100 properties/units',

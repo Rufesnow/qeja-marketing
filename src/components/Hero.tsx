@@ -1,12 +1,9 @@
-import { useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { H1, Lead, Muted } from '@/components/ui/typography'
-import PortfolioDashboard, { type Layer } from '@/components/PortfolioDashboard'
+import PortfolioDashboard from '@/components/PortfolioDashboard'
 
 export default function Hero() {
-  const [layer, setLayer] = useState<Layer>('ai')
-
   return (
     <section className="px-6 py-16 lg:py-24">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-16">
@@ -32,7 +29,7 @@ export default function Hero() {
         </div>
         {/* The dashboard preview is hidden on phones, as in the Figma mobile frame. */}
         <div id="portfolio-dashboard" className="hidden w-full max-w-[960px] md:block">
-          <PortfolioDashboard layer={layer} onLayerChange={setLayer} />
+          <PortfolioDashboard />
         </div>
       </div>
     </section>

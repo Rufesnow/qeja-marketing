@@ -33,7 +33,7 @@ export default function Features() {
           <H2>The day-to-day, handled.</H2>
           <Lead>Portfolio, money, tenants and paperwork in one place, built for how property is managed in Kenya.</Lead>
         </div>
-        <div className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
+        <div className="grid gap-x-8 gap-y-10 md:grid-cols-3">
           {groups.map((g, gi) => (
             <section key={g.title} aria-labelledby={`feature-group-${gi}`} className="flex flex-col gap-5 border-t-2 border-primary pt-4">
               <H3 id={`feature-group-${gi}`}>{g.title}</H3>
