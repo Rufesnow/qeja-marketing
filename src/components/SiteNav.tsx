@@ -12,7 +12,7 @@ const links = [
 
 export default function SiteNav() {
   return (
-    <header className="relative z-10 bg-background px-6 shadow-sm">
+    <header className="sticky top-0 z-50 bg-background px-6 shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between py-4">
         <a href="#" className="flex items-center gap-2" aria-label="Qeja home">
           <Logo size={32} />
