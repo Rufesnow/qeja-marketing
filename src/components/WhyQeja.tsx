@@ -18,7 +18,7 @@ export default function WhyQeja() {
         <ul className="grid gap-x-12 gap-y-10 md:grid-cols-3">
           {points.map((p) => (
             <li key={p.title} className="flex flex-col gap-2">
-              <H3 className="text-3xl uppercase">{p.title}</H3>
+              <H3 className="text-xl uppercase">{p.title}</H3>
               <Lead className="text-lg">{p.note}</Lead>
             </li>
           ))}
