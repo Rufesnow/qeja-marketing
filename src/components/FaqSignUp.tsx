@@ -54,7 +54,7 @@ export default function FaqSignUp() {
           </Accordion>
         </div>
         <div className="flex flex-wrap items-start gap-x-16 gap-y-12">
-          <div className="flex min-w-80 flex-1 flex-col gap-3">
+          <div className="flex min-w-80 max-w-lg flex-1 flex-col gap-3">
             <H2>
               Your next great tenant is applying now. <span className="text-primary">Know them before you sign.</span>
             </H2>
