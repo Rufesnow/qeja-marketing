@@ -5,7 +5,7 @@ import Logo from '@/components/Logo'
 import ThemeToggle from '@/components/ThemeToggle'
 
 const links = [
-  { label: 'Product', href: '#why-qeja' },
+  { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
 ]
@@ -32,7 +32,7 @@ export default function SiteNav() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Button asChild>
-            <a href="#sign-up">Ask a question</a>
+            <a href="#contact">Talk to us</a>
           </Button>
         </div>
       </div>

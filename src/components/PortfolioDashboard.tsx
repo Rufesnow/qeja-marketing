@@ -6,7 +6,6 @@ import {
   FilePenLine,
   LineChart,
   ReceiptText,
-  Sparkles,
   TrendingUp,
   UserMinus,
   Users,
@@ -60,9 +59,9 @@ const layers: Record<Layer, { label: string; stats: Stat[]; rows: Row[] }> = {
       { title: 'Maintenance', value: 'KES 180K', note: 'Expected next quarter', icon: Wrench },
     ],
     rows: [
-      { title: 'John Doe · Unit 12B', description: 'Likely to leave before his lease ends in February', badge: 'High risk', icon: Sparkles },
-      { title: 'Rent review · Westlands Heights', description: 'Room to raise rent 8% and stay fully let', badge: 'Revenue opportunity', icon: Sparkles },
-      { title: 'Block A plumbing', description: 'Repair costs set to rise next quarter', badge: 'Maintenance', icon: Sparkles },
+      { title: 'Brian Kamau · Unit 12B', description: 'Likely to leave before his lease ends in February', badge: 'High risk', icon: UserMinus },
+      { title: 'Rent review · Westlands Heights', description: 'Room to raise rent 8% and stay fully let', badge: 'Revenue opportunity', icon: TrendingUp },
+      { title: 'Block A plumbing', description: 'Repair costs set to rise next quarter', badge: 'Maintenance', icon: Wrench },
     ],
   },
 }
