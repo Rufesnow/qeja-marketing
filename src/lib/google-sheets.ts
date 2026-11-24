@@ -41,7 +41,9 @@ export async function appendLeadToSheet(data: LeadData): Promise<void> {
   await sheets.spreadsheets.values.append({
     spreadsheetId,
     range: 'Sheet1!A:F',
-    valueInputOption: 'USER_ENTERED',
+    // RAW: store exactly what was typed. USER_ENTERED would run text starting with "="
+    // as a spreadsheet formula and turn "+254…" phone numbers into plain numbers.
+    valueInputOption: 'RAW',
     requestBody: {
       values: [
         [

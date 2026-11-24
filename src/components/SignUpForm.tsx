@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -35,6 +35,12 @@ const fields: { name: keyof FormInput; label: string; placeholder: string; type?
 export default function SignUpForm() {
   const [submittedName, setSubmittedName] = useState('')
   const [serverError, setServerError] = useState('')
+  // Spam checks for /api/leads: when the form appeared, and a hidden field only bots fill in.
+  const startedAt = useRef<number>(0)
+  const honeypot = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    startedAt.current = Date.now()
+  }, [])
   const {
     register,
     handleSubmit,
@@ -47,7 +53,7 @@ export default function SignUpForm() {
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, website: honeypot.current?.value ?? '', startedAt: startedAt.current }),
       })
       if (!res.ok) {
         const body = await res.json().catch(() => ({}))
@@ -95,6 +101,11 @@ export default function SignUpForm() {
         </CardContent>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-6">
+          {/* Honeypot: off-screen and hidden from assistive tech; people never fill it in. */}
+          <div aria-hidden="true" className="absolute -left-[9999px] size-px overflow-hidden">
+            <label htmlFor="website">Website</label>
+            <input ref={honeypot} id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+          </div>
           <CardHeader>
             <CardTitle>Let’s talk about your properties</CardTitle>
             <CardDescription>Tell us a little about your portfolio. We’ll call you within one business day.</CardDescription>
