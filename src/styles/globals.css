@@ -48,6 +48,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* The header is sticky (Figma Nav annotation): keep anchored sections clear of it. */
+    scroll-padding-top: 4.5rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

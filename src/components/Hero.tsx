@@ -27,8 +27,13 @@ export default function Hero() {
           </div>
           <Muted>Kenya DPA and GDPR compliant</Muted>
         </div>
-        {/* The dashboard preview is hidden on phones, as in the Figma mobile frame. */}
-        <div id="portfolio-dashboard" className="hidden w-full max-w-[960px] md:block">
+        {/* Figma "Dashboard preview": cropped to 346px (tab row, stats and the first data row) and
+            faded out from 55% down. Hidden on phones, as in the Figma mobile frame. */}
+        <div
+          id="portfolio-dashboard"
+          aria-hidden="true"
+          className="hidden h-[346px] w-full max-w-[960px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_55%,transparent)] md:block"
+        >
           <PortfolioDashboard />
         </div>
       </div>
