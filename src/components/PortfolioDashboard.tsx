@@ -1,5 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import { BarChart, Building2, LineChart, TrendingUp, Users, Wallet } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Item, ItemActions, ItemContent, ItemDescription, ItemMedia, ItemTitle } from '@/components/ui/item'
@@ -47,9 +48,12 @@ function StatCard({ title, value, note, icon: Icon }: Stat) {
 
 export default function PortfolioDashboard({ className }: { className?: string }) {
   return (
-    <Card className={className}>
+    <Card className={cn('shadow-lg', className)}>
       <CardHeader>
-        <CardTitle>Portfolio overview</CardTitle>
+        <div className="flex items-baseline justify-between gap-4">
+          <CardTitle>Portfolio overview</CardTitle>
+          <span className="text-[10px] uppercase tracking-wide text-muted-foreground">Sample data</span>
+        </div>
         <CardDescription>Westlands Heights Apartments · 48 units</CardDescription>
       </CardHeader>
       <CardContent>

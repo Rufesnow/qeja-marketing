@@ -17,7 +17,7 @@ const schema = z.object({
   phone: z
     .string()
     .transform((s) => s.replace(/[\s-]/g, ''))
-    .pipe(z.string().regex(/^\+?[0-9]{10,15}$/, 'Enter a valid phone number, e.g. +254 712 345 678')),
+    .pipe(z.string().regex(/^\+?[0-9]{10,15}$/, 'Enter a valid phone number, e.g. 0712 345 678')),
   email: z.string().trim().email('Enter a valid email address'),
 })
 
@@ -28,7 +28,7 @@ const fields: { name: keyof FormInput; label: string; placeholder: string; type?
   { name: 'firstName', label: 'First name', placeholder: 'Jane', autoComplete: 'given-name' },
   { name: 'lastName', label: 'Last name', placeholder: 'Mwangi', autoComplete: 'family-name' },
   { name: 'companyName', label: 'Company', placeholder: 'Mwangi Properties Ltd', autoComplete: 'organization' },
-  { name: 'phone', label: 'Phone', placeholder: '+254 712 345 678', type: 'tel', autoComplete: 'tel' },
+  { name: 'phone', label: 'Phone', placeholder: '0712 345 678', type: 'tel', autoComplete: 'tel' },
   { name: 'email', label: 'Email', placeholder: 'jane@mwangiproperties.co.ke', type: 'email', autoComplete: 'email' },
 ]
 
@@ -71,6 +71,7 @@ export default function SignUpForm() {
           id={f.name}
           type={f.type ?? 'text'}
           placeholder={f.placeholder}
+          className="placeholder:text-muted-foreground/50"
           autoComplete={f.autoComplete}
           aria-invalid={!!error}
           aria-describedby={error ? `${f.name}-error` : undefined}
@@ -102,7 +103,7 @@ export default function SignUpForm() {
           <CardContent className="flex flex-col gap-4">
             <div className="flex gap-4">{fields.slice(0, 2).map(field)}</div>
             {fields.slice(2).map(field)}
-            <Muted>No commitment · Your details stay private · Kenya DPA &amp; GDPR compliant</Muted>
+            <Muted>No commitment · Your details stay private · Built to Kenya Data Protection Act standards</Muted>
             {serverError && (
               <p className="text-sm text-destructive" role="alert">
                 {serverError}

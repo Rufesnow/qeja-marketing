@@ -13,15 +13,15 @@ export default function SiteFooter() {
   return (
     <footer className="px-6">
       <Separator />
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-y-4 py-8">
-        <div className="flex min-w-72 max-w-sm flex-1 items-center gap-2">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 py-8 md:flex-row md:items-center md:justify-between">
+        <div className="flex items-center gap-2">
           <Logo size={24} />
           <Muted>© 2025 Qeja Real Estate Property Management.</Muted>
         </div>
-        <ul className="flex min-w-64 flex-1 flex-wrap justify-end gap-2">
+        <ul className="flex flex-col items-start gap-1 md:flex-row md:flex-wrap md:justify-end md:gap-2">
           {legal.map((l) => (
             <li key={l.href}>
-              <Button asChild variant="link" size="sm" className="text-xs">
+              <Button asChild variant="link" size="sm" className="px-0 text-xs md:px-3">
                 <a href={l.href} download>
                   {l.label}
                 </a>

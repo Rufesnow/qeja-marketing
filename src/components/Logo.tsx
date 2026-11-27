@@ -1,5 +1,5 @@
 import Image from 'next/image'
 
 export default function Logo({ size }: { size: number }) {
-  return <Image src="/images/qeja-logo.png" alt="Qeja" width={size} height={size} priority />
+  return <Image src="/images/qeja-logo.png" alt="" width={size} height={size} priority />
 }
