@@ -10,37 +10,67 @@ const leadSchema = z.object({
   email: z.string().email(),
 })
 
-// Simple in-memory rate limit (per email, 5 min window)
-const recentSubmissions = new Map<string, number>()
-const RATE_LIMIT_WINDOW = 5 * 60 * 1000 // 5 minutes
+// Spam checks sent alongside the form fields (not stored).
+const botFieldsSchema = z.object({
+  website: z.string().optional(), // honeypot: hidden from people, bots fill it in
+  startedAt: z.number().optional(), // when the form was rendered (ms since epoch)
+})
 
-function isRateLimited(email: string): boolean {
-  const now = Date.now()
-  const lastSubmission = recentSubmissions.get(email)
-  if (lastSubmission && now - lastSubmission < RATE_LIMIT_WINDOW) {
-    return true
-  }
-  recentSubmissions.set(email, now)
+const MIN_FILL_TIME = 3 * 1000 // people take longer than 3 s to fill in five fields
+const EMAIL_WINDOW = 5 * 60 * 1000 // one submission per email per 5 minutes
+const IP_WINDOW = 60 * 60 * 1000
+const IP_LIMIT = 3 // submissions per visitor address per hour
 
-  // Clean old entries
-  for (const [key, time] of recentSubmissions) {
-    if (now - time > RATE_LIMIT_WINDOW) {
-      recentSubmissions.delete(key)
-    }
-  }
+// In-memory limits: per server instance (Cloud Run runs at most 2), reset on restart.
+const recentByEmail = new Map<string, number>()
+const recentByIp = new Map<string, number[]>()
 
-  return false
+function clientIp(req: NextApiRequest): string {
+  // Cloud Run puts the visitor's address first in X-Forwarded-For.
+  const forwarded = req.headers['x-forwarded-for']
+  const first = (Array.isArray(forwarded) ? forwarded[0] : forwarded)?.split(',')[0]?.trim()
+  return first || req.socket.remoteAddress || 'unknown'
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+function isEmailLimited(email: string, now: number): boolean {
+  for (const [key, time] of recentByEmail) if (now - time > EMAIL_WINDOW) recentByEmail.delete(key)
+  const last = recentByEmail.get(email)
+  return last !== undefined && now - last < EMAIL_WINDOW
+}
+
+function isIpLimited(ip: string, now: number): boolean {
+  for (const [key, times] of recentByIp) {
+    const fresh = times.filter((t) => now - t < IP_WINDOW)
+    if (fresh.length) recentByIp.set(key, fresh)
+    else recentByIp.delete(key)
+  }
+  return (recentByIp.get(ip)?.length ?? 0) >= IP_LIMIT
+}
+
+function recordSubmission(email: string, ip: string, now: number) {
+  recentByEmail.set(email, now)
+  recentByIp.set(ip, [...(recentByIp.get(ip) ?? []), now])
+}
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  // Validate input
+  const now = Date.now()
+
+  // Bot checks first. A bot gets the same "success" reply as a person, so it has
+  // nothing to learn from; nothing is stored.
+  const bot = botFieldsSchema.safeParse(req.body ?? {})
+  const looksAutomated =
+    !bot.success ||
+    Boolean(bot.data.website?.trim()) ||
+    bot.data.startedAt === undefined ||
+    now - bot.data.startedAt < MIN_FILL_TIME
+  if (looksAutomated) {
+    return res.status(200).json({ success: true })
+  }
+
   const parsed = leadSchema.safeParse(req.body)
   if (!parsed.success) {
     return res.status(400).json({
@@ -50,31 +80,22 @@ export default async function handler(
   }
 
   const { email } = parsed.data
-
-  // Rate limit
-  if (isRateLimited(email)) {
+  const ip = clientIp(req)
+  if (isEmailLimited(email, now) || isIpLimited(ip, now)) {
     return res.status(429).json({
-      error: 'Too many requests. Please try again in a few minutes.',
+      error: 'Too many requests. Please try again later.',
     })
   }
 
-  // Attempt Google Sheets append
   try {
     await appendLeadToSheet(parsed.data)
+    recordSubmission(email, ip, now)
     return res.status(200).json({ success: true })
   } catch (error) {
-    console.error('Failed to save lead:', error)
-
-    // If Google Sheets is not configured, still return success
-    // (leads will be logged in server output)
-    if (
-      error instanceof Error &&
-      error.message === 'Google Sheets credentials not configured'
-    ) {
-      console.log('Lead captured (no Sheets configured):', parsed.data)
-      return res.status(200).json({ success: true, note: 'stored_locally' })
-    }
-
-    return res.status(500).json({ error: 'Failed to save. Please try again.' })
+    // Never log the visitor's details, only what went wrong.
+    console.error('Failed to save lead:', error instanceof Error ? error.message : 'unknown error')
+    return res.status(503).json({
+      error: 'We couldn’t send your details just now. Please try again in a few minutes.',
+    })
   }
 }
